@@ -1,0 +1,127 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNyF0YKefD9tYCckeDoDLOJ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/leop-4/hola-mundo/blob/main/ejercicio2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ziWVF0tF_yO8"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "El codigo pide al usuario que adivine un numero generado aleatoriamente del 1 al 100, despues de cada intento el programa le dice si el numero ingresado es mas alto o mas bajo\n"
+      ],
+      "metadata": {
+        "id": "4hbu3McMENnP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "\n",
+        "numero_secreto = random.randint(1, 100)\n",
+        "\n",
+        "intentos = 0\n",
+        "\n",
+        "print(\"¡Bienvenido al juego de adivinar el número!\")\n",
+        "print(\"Estoy pensando en un número entre 1 y 100.\")\n",
+        "\n",
+        "while True:\n",
+        "\n",
+        "    try:\n",
+        "        intento = int(input(\"Introduce tu intento: \"))\n",
+        "        intentos += 1\n",
+        "    except ValueError:\n",
+        "        print(\"Por favor, ingresa un número válido.\")\n",
+        "        continue\n",
+        "\n",
+        "    if intento < numero_secreto:\n",
+        "        print(\"El número secreto es mayor.\")\n",
+        "    elif intento > numero_secreto:\n",
+        "        print(\"El número secreto es menor.\")\n",
+        "    else:\n",
+        "        print(f\"¡Felicidades! Has adivinado el número {numero_secreto} en {intentos} intentos.\")\n",
+        "        break\n"
+      ],
+      "metadata": {
+        "id": "jc1UR0HEFS3N"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "El programa le pide al usuario ingresar una palabra y despues le da la cantidad de vocales de la palabra dada por el usuario."
+      ],
+      "metadata": {
+        "id": "8OJGP5YIFsbk"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "palabra = input(\"Ingresa una palabra: \")\n",
+        "\n",
+        "contador_vocales = 0\n",
+        "vocales = \"aeiouAEIOU\"\n",
+        "\n",
+        "for letra in palabra:\n",
+        "\n",
+        "    if letra in vocales:\n",
+        "        contador_vocales += 1\n",
+        "\n",
+        "print(f\"La cantidad de vocales en la palabra es: {contador_vocales}\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mS5gkkArF2KF",
+        "outputId": "25dcf9fb-651b-4f32-aef4-d49f5580f4ed"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingresa una palabra: Leonel\n",
+            "La cantidad de vocales en la palabra es: 3\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
